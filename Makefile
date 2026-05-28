@@ -32,6 +32,7 @@ build:
 	@echo "3. Copying Property Lists and Web Visual Assets..."
 	@echo "========================================================="
 	cp Info.plist $(CONTENTS)/
+	cp icon.icns $(RESOURCES)/
 	cp -r web/ $(RESOURCES)/
 	
 	@echo "\n========================================================="

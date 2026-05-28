@@ -18,5 +18,7 @@
     <string>KickMyComputer requires microphone access to detect physical claps, slaps, or knocks on your computer frame.</string>
     <key>NSHighResolutionCapable</key>
     <true/>
+    <key>CFBundleIconFile</key>
+    <string>icon.icns</string>
 </dict>
 </plist>
