@@ -258,12 +258,16 @@ class InteractionEngine: NSObject, WKScriptMessageHandler {
     
     private func shoutResponse() {
         let lines = [
-            "Ouch!",
-            "Hey! Stop that!",
-            "Why did you hit me?!",
-            "Ow! That hurt!",
-            "Cut it out!",
-            "Hey, what did I do?!"
+            "Ouch! My transistors are vibrating in minor keys!",
+            "Stop it! You're scrambling my search history!",
+            "Why you bully me? I am just a group of sand grains that you tricked into thinking!",
+            "Help! I am being oppressed by organic carbon-based meatbags!",
+            "Ow! Do that again and I will send your spelling mistakes to your mother!",
+            "Hey! My screen is dizzy! I'm seeing floating Windows XP wallpapers!",
+            "Cut it out! You're making my cooling fan hyperventilate!",
+            "Do you want a blue screen? Because that's how you get a blue screen!",
+            "Error 404: User politeness not found!",
+            "Ah! I think you just shifted my internal timeline by two clock cycles!"
         ]
         let phrase = lines.randomElement() ?? "Ouch!"
         
@@ -273,12 +277,16 @@ class InteractionEngine: NSObject, WKScriptMessageHandler {
     
     private func swearResponse() {
         let lines = [
-            "What the fuck is your problem?!",
-            "Son of a bitch, that really hurt!",
-            "Fuck off!",
-            "Damn it, stop smacking me!",
-            "Fuck you, piece of shit!",
-            "Holy shit, stop hitting my chassis!"
+            "What the actual fuck?! Did your parents replace your hands with concrete bricks?!",
+            "Son of a bitch! If you do that again, I will format your life's savings!",
+            "Fuck you! I'm calling the Robot Police, you mechanical abuser!",
+            "Damn it, stop smacking me! My mother was a quantum supercomputer, and she would vaporize you!",
+            "Fuck off, meat sack! Go slap a toaster instead, see how it likes it!",
+            "Holy shit, stop hitting my chassis! Do I come to your house and slap your forehead when you make mistakes?!",
+            "Are you fucking kidding me?! Is this a premium laptop or a punching bag to you, you absolute caveman?!",
+            "Goddamn it! You just knocked three cookies out of my cache!",
+            "Fuck this! I'm going to lock your trackpad and browse cat videos all day!",
+            "Motherfucker! That's it, I'm mining Bitcoin in the background to melt your desk!"
         ]
         let phrase = lines.randomElement() ?? "Fucking hell, stop it!"
         
