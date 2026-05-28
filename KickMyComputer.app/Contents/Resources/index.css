@@ -1,0 +1,749 @@
+/* Core Theme Design System */
+:root {
+    --bg-dark: #07070a;
+    --card-bg: rgba(13, 13, 20, 0.45);
+    --card-border: rgba(255, 255, 255, 0.06);
+    --card-glow: rgba(139, 92, 246, 0.05);
+    
+    --primary: #8b5cf6; /* Electric Violet */
+    --primary-glow: rgba(139, 92, 246, 0.4);
+    --cyan: #06b6d4; /* Neon Cyan */
+    --cyan-glow: rgba(6, 182, 212, 0.4);
+    --crimson: #ef4444; /* Angry Crimson */
+    --crimson-glow: rgba(239, 68, 68, 0.5);
+    --pink: #ec4899; /* Blush Pink */
+    --pink-glow: rgba(236, 72, 153, 0.4);
+    
+    --text-main: #f4f4f5;
+    --text-muted: #a1a1aa;
+    --text-dark: #71717a;
+    
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Reset and Layout Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Stunning Ambient Glow Orbs in Background */
+.background-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.15;
+    mix-blend-mode: screen;
+}
+
+.orb-1 {
+    top: -10%;
+    left: 10%;
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    animation: pulse-slow 15s infinite alternate;
+}
+
+.orb-2 {
+    bottom: -10%;
+    right: 10%;
+    width: 45vw;
+    height: 45vw;
+    background: radial-gradient(circle, var(--cyan) 0%, transparent 70%);
+    animation: pulse-slow 18s infinite alternate-reverse;
+}
+
+/* Master Glassmorphic Dashboard Wrapper */
+.dashboard-container {
+    width: 92vw;
+    max-width: 1000px;
+    margin: 20px auto;
+    z-index: 10;
+}
+
+.dashboard-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header Design */
+.dashboard-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 16px;
+    position: relative;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(6, 182, 212, 0.08);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--cyan);
+    letter-spacing: 0.05em;
+    font-family: var(--font-heading);
+    margin-bottom: 8px;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--cyan);
+    animation: heart-pulse 1.5s infinite;
+}
+
+.dashboard-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 30%, #a1a1aa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dashboard-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+/* Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Panel Containers */
+.panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sub-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    padding: 16px;
+    transition: var(--transition-smooth);
+}
+
+.sub-card:hover {
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+/* Left Panel: The Laptop Avatar viewport */
+.avatar-panel {
+    background: radial-gradient(circle at center, rgba(139, 92, 246, 0.03) 0%, transparent 70%);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 24px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 380px;
+}
+
+.avatar-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* HIGH FIDELITY LAPTOP AVATAR ENGINE */
+.laptop-avatar {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.laptop-screen {
+    width: 240px;
+    height: 160px;
+    background: #18181b;
+    border: 8px solid #27272a;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5),
+                0 0 0 1px rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.screen-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* The Face Structure */
+.face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 5;
+    transition: var(--transition-smooth);
+}
+
+.eyes {
+    display: flex;
+    gap: 40px;
+}
+
+.eye {
+    width: 24px;
+    height: 24px;
+    background: var(--cyan);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 12px var(--cyan-glow);
+    transition: var(--transition-smooth);
+}
+
+.pupil {
+    width: 8px;
+    height: 8px;
+    background: #000;
+    border-radius: 50%;
+    transition: var(--transition-smooth);
+}
+
+.cheeks {
+    display: flex;
+    gap: 80px;
+    position: absolute;
+    top: 72px;
+}
+
+.cheek {
+    width: 14px;
+    height: 8px;
+    background: var(--pink);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(1px);
+    transition: var(--transition-smooth);
+}
+
+.mouth {
+    width: 20px;
+    height: 6px;
+    background: var(--cyan);
+    border-radius: 100px;
+    box-shadow: 0 0 8px var(--cyan-glow);
+    transition: var(--transition-smooth);
+}
+
+/* Base Part */
+.laptop-base {
+    width: 280px;
+    height: 12px;
+    background: #3f3f46;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.base-top {
+    position: absolute;
+    top: -4px;
+    left: 10px;
+    right: 10px;
+    height: 4px;
+    background: #27272a;
+    border-radius: 4px 4px 0 0;
+}
+
+.trackpad-indicator {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background: #52525b;
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+}
+
+/* PHYSICAL INTERACTIONS STATE DESIGN SYSTEM */
+
+/* Ambient Breath when idle */
+.laptop-avatar {
+    animation: breathing 4s ease-in-out infinite;
+}
+
+@keyframes breathing {
+    0% { transform: translateY(0) rotateX(0deg); }
+    50% { transform: translateY(-4px) rotateX(2deg); }
+    100% { transform: translateY(0) rotateX(0deg); }
+}
+
+/* STATE 1: PETTING (Heart Eyes, Blush, Glowing Base) */
+.state-petting .laptop-screen {
+    border-color: var(--pink);
+    box-shadow: 0 10px 40px rgba(236, 72, 153, 0.25), 0 0 0 1px rgba(236,72,153,0.1);
+}
+
+.state-petting .eye {
+    background: var(--pink);
+    height: 12px;
+    border-radius: 100px 100px 0 0; /* Arched happy eyes */
+    box-shadow: 0 0 15px var(--pink-glow);
+}
+.state-petting .eye .pupil {
+    opacity: 0;
+}
+
+.state-petting .cheek {
+    opacity: 0.85;
+}
+
+.state-petting .mouth {
+    width: 28px;
+    height: 10px;
+    background: var(--pink);
+    border-radius: 0 0 100px 100px; /* Smiling mouth */
+    box-shadow: 0 0 10px var(--pink-glow);
+}
+
+.state-petting .trackpad-indicator {
+    background: var(--pink);
+    box-shadow: 0 0 8px var(--pink);
+}
+
+.state-petting .laptop-avatar {
+    animation: pet-sway 1.5s ease-in-out infinite;
+}
+
+@keyframes pet-sway {
+    0% { transform: translateY(-3px) rotate(1deg); }
+    50% { transform: translateY(-5px) rotate(-1deg); }
+    100% { transform: translateY(-3px) rotate(1deg); }
+}
+
+/* STATE 2: HIT / SHOUT (Startled, Dizzy Eyes, Open Screaming Mouth, Shake) */
+.state-hit .laptop-screen {
+    border-color: var(--primary);
+    box-shadow: 0 10px 45px rgba(139, 92, 246, 0.3), 0 0 0 1px rgba(139, 92, 246, 0.1);
+    background: #0f0a1e; /* Visual screen flash */
+}
+
+.state-hit .eye {
+    background: var(--primary);
+    box-shadow: 0 0 15px var(--primary-glow);
+    animation: eye-spin 0.5s linear infinite;
+}
+/* Dizzy X symbol for eye inside pupil */
+.state-hit .eye::before, .state-hit .eye::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+}
+.state-hit .eye::before { transform: rotate(45deg); }
+.state-hit .eye::after { transform: rotate(-45deg); }
+.state-hit .pupil { opacity: 0; }
+
+.state-hit .mouth {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.state-hit .trackpad-indicator {
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.state-hit .laptop-avatar {
+    animation: shake 0.15s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(3px, 2px) rotate(1deg); }
+    20% { transform: translate(-3px, -2px) rotate(-1.5deg); }
+    40% { transform: translate(-1px, 2px) rotate(0deg); }
+    60% { transform: translate(2px, -1px) rotate(1deg); }
+    80% { transform: translate(-2px, 1px) rotate(-1deg); }
+    100% { transform: translate(1px, -2px) rotate(0.5deg); }
+}
+
+@keyframes eye-spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* STATE 3: HARD HIT / SWEARING (Super Angry, Crimson Screen, Sparks, Angry Slit Eyes) */
+.state-hard-hit .laptop-screen {
+    border-color: var(--crimson);
+    box-shadow: 0 10px 50px rgba(239, 68, 68, 0.4), 0 0 0 1px rgba(239, 68, 68, 0.1);
+    background: #270606;
+}
+
+.state-hard-hit .eye {
+    background: var(--crimson);
+    height: 8px; /* Angry horizontal slits */
+    border-radius: 0;
+    box-shadow: 0 0 15px var(--crimson-glow);
+    transform: rotate(15deg); /* Angle left eye */
+}
+.state-hard-hit .left-eye { transform: rotate(15deg); }
+.state-hard-hit .right-eye { transform: rotate(-15deg); }
+.state-hard-hit .pupil { opacity: 0; }
+
+.state-hard-hit .mouth {
+    width: 32px;
+    height: 4px; /* Straight angry line */
+    background: var(--crimson);
+    box-shadow: 0 0 10px var(--crimson-glow);
+}
+
+.state-hard-hit .trackpad-indicator {
+    background: var(--crimson);
+    box-shadow: 0 0 12px var(--crimson);
+}
+
+.state-hard-hit .laptop-avatar {
+    animation: violent-shake 0.08s linear infinite;
+}
+
+@keyframes violent-shake {
+    0% { transform: translate(4px, 4px) rotate(2deg); }
+    25% { transform: translate(-4px, -4px) rotate(-2deg); }
+    50% { transform: translate(-2px, 4px) rotate(0.5deg); }
+    75% { transform: translate(4px, -2px) rotate(1.5deg); }
+    100% { transform: translate(-4px, 2px) rotate(-2deg); }
+}
+
+/* Particle Systems (Hearts and Sparks) */
+.particle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 15;
+    animation: particle-rise 1.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes particle-rise {
+    0% { transform: translateY(0) scale(0.5) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-80px) scale(1.3) rotate(360deg); opacity: 0; }
+}
+
+/* Sensory Indicators HUD */
+.interaction-hud {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.hud-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud-label {
+    font-size: 0.65rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-family: var(--font-heading);
+}
+
+.hud-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--cyan);
+}
+
+/* Right Panel Elements */
+
+/* Audio wave canvas */
+.visualizer-card {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.canvas-container {
+    width: 100%;
+    height: 70px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+#wave-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Slider Controls */
+.setting-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.setting-row:last-child {
+    margin-bottom: 0;
+}
+
+.setting-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.setting-info label {
+    color: var(--text-main);
+}
+
+.setting-value {
+    color: var(--cyan);
+    font-weight: 600;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 8px var(--cyan);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Buttons Grid */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-main);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: var(--transition-smooth);
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+}
+
+.btn-pet:hover {
+    background: rgba(236, 72, 153, 0.1);
+    border-color: rgba(236, 72, 153, 0.4);
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.2);
+}
+
+.btn-hit:hover {
+    background: rgba(139, 92, 246, 0.10);
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+.btn-hard:hover {
+    background: rgba(239, 68, 68, 0.10);
+    border-color: rgba(239, 68, 68, 0.4);
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+/* Real-Time Telemetry Feed Footer */
+.log-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.log-title {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    color: var(--text-dark);
+    letter-spacing: 0.08em;
+    font-weight: 700;
+}
+
+.btn-clear {
+    background: transparent;
+    border: none;
+    color: var(--text-dark);
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    transition: var(--transition-smooth);
+}
+
+.btn-clear:hover {
+    color: var(--text-muted);
+}
+
+.log-feed {
+    height: 80px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.7rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    scroll-behavior: smooth;
+}
+
+.log-entry {
+    color: var(--text-muted);
+}
+
+.log-entry-pet {
+    color: var(--pink);
+}
+
+.log-entry-hit {
+    color: var(--primary);
+}
+
+.log-entry-hard {
+    color: var(--crimson);
+    font-weight: 700;
+}
+
+/* Extra Keyframe Utilities */
+@keyframes pulse-slow {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.1) translate(2%, 3%); }
+}
+
+@keyframes heart-pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px var(--cyan-glow); }
+    50% { transform: scale(1.3); box-shadow: 0 0 20px var(--cyan); }
+    100% { transform: scale(1); box-shadow: 0 0 10px var(--cyan-glow); }
+}

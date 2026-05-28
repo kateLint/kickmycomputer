@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KickMyComputer Dashboard</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="background-decorations">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- Main Interface Glass -->
+        <main class="dashboard-card">
+            
+            <!-- Header section -->
+            <header class="dashboard-header">
+                <div class="status-badge" id="system-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">MONITORS ONLINE</span>
+                </div>
+                <h1 class="dashboard-title">KICKMYCOMPUTER</h1>
+                <p class="dashboard-subtitle">Acoustic & Force-Touch Physical Feedback Engine</p>
+            </header>
+
+            <!-- Grid Layout -->
+            <div class="dashboard-grid">
+                
+                <!-- Left Panel: The Interactive Laptop Avatar -->
+                <section class="panel avatar-panel">
+                    <div class="avatar-container" id="avatar-container">
+                        <!-- Custom designed cute laptop face -->
+                        <div class="laptop-avatar" id="laptop-avatar">
+                            <div class="laptop-screen">
+                                <div class="face">
+                                    <div class="eyes">
+                                        <div class="eye left-eye">
+                                            <div class="pupil"></div>
+                                        </div>
+                                        <div class="eye right-eye">
+                                            <div class="pupil"></div>
+                                        </div>
+                                    </div>
+                                    <div class="cheeks">
+                                        <div class="cheek left-cheek"></div>
+                                        <div class="cheek right-cheek"></div>
+                                    </div>
+                                    <div class="mouth" id="mouth"></div>
+                                </div>
+                                <div class="screen-overlay"></div>
+                            </div>
+                            <div class="laptop-base">
+                                <div class="base-top"></div>
+                                <div class="trackpad-indicator" id="trackpad-ind"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="interaction-hud">
+                        <div class="hud-stat">
+                            <span class="hud-label">LAST ACTION</span>
+                            <span class="hud-value" id="hud-last-action">STANDBY</span>
+                        </div>
+                        <div class="hud-stat">
+                            <span class="hud-label">SENSORY LEVEL</span>
+                            <span class="hud-value" id="hud-sensory-level">0%</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Right Panel: Configurations & Audio Wave -->
+                <section class="panel control-panel">
+                    
+                    <!-- Wave Visualizer Card -->
+                    <div class="sub-card visualizer-card">
+                        <h3 class="card-title">ACOUSTIC OSCILLOSCOPE</h3>
+                        <div class="canvas-container">
+                            <canvas id="wave-canvas"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Calibration Settings -->
+                    <div class="sub-card calibration-card">
+                        <h3 class="card-title">ENGINE CALIBRATION</h3>
+                        
+                        <div class="setting-row">
+                            <div class="setting-info">
+                                <label for="mic-threshold">Impact Sensitivity</label>
+                                <span class="setting-value" id="mic-val">65%</span>
+                            </div>
+                            <input type="range" id="mic-threshold" min="1" max="100" value="65" class="slider">
+                        </div>
+
+                        <div class="setting-row">
+                            <div class="setting-info">
+                                <label for="pet-threshold">Pet Sensitivity</label>
+                                <span class="setting-value" id="pet-val">30%</span>
+                            </div>
+                            <input type="range" id="pet-threshold" min="1" max="100" value="30" class="slider">
+                        </div>
+                    </div>
+
+                    <!-- Manual Interactors (For testing) -->
+                    <div class="sub-card test-card">
+                        <h3 class="card-title">MANUAL SIMULATION</h3>
+                        <div class="button-grid">
+                            <button class="btn btn-pet" id="btn-simulate-pet">
+                                <span class="btn-icon">🌸</span> Pet Me
+                            </button>
+                            <button class="btn btn-hit" id="btn-simulate-hit">
+                                <span class="btn-icon">⚡</span> Tap / Hit
+                            </button>
+                            <button class="btn btn-hard" id="btn-simulate-hard">
+                                <span class="btn-icon">🔥</span> Hard Hit
+                            </button>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+            <!-- Footer: Live Logs -->
+            <footer class="dashboard-footer">
+                <div class="log-container">
+                    <div class="log-header">
+                        <h4 class="log-title">REAL-TIME TELEMETRY FEED</h4>
+                        <button class="btn-clear" id="btn-clear-logs">Clear Feed</button>
+                    </div>
+                    <div class="log-feed" id="log-feed">
+                        <div class="log-entry system-msg">[SYSTEM] Sensory calibration online. Tap/pet trackpad or slap keyboard area to interact.</div>
+                    </div>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
