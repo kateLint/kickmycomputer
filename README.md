@@ -31,6 +31,14 @@ Handle with care. It has feelings—and quite a vocabulary.
 
 ---
 
+## 🌸 Physical Nudges & Positive Reinforcement
+
+![Laptop Nudges](spank.jpg)
+
+> *"Sometimes a little physical nudge is all it takes to keep your computer happy, alert, and feeling energized!"*
+
+---
+
 ## 🛠️ System Architecture
 
 KickMyComputer uses a lightweight, high-performance hybrid model:
