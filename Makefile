@@ -1,7 +1,7 @@
-# Makefile for KickMyComputer
+# Makefile for SmackYourComputer
 # Synthesizes native Swift binary and bundles as a macOS App package.
 
-APP_NAME = KickMyComputer
+APP_NAME = SmackYourComputer
 APP_BUNDLE = $(APP_NAME).app
 CONTENTS = $(APP_BUNDLE)/Contents
 MACOS = $(CONTENTS)/MacOS
@@ -44,7 +44,7 @@ build:
 	@echo "========================================================="
 
 run: build
-	@echo "\nLaunching KickMyComputer.app..."
+	@echo "\nLaunching SmackYourComputer.app..."
 	open /Users/kerenlint/Desktop/$(APP_BUNDLE)
 
 clean:

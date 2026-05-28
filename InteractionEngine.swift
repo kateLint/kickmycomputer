@@ -276,7 +276,7 @@ class InteractionEngine: NSObject, WKScriptMessageHandler {
             "What the fuck is your problem?!",
             "Son of a bitch, that really hurt!",
             "Fuck off!",
-            "Damn it, stop kicking me!",
+            "Damn it, stop smacking me!",
             "Fuck you, piece of shit!",
             "Holy shit, stop hitting my chassis!"
         ]

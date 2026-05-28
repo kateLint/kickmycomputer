@@ -49,7 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKUIDelegate, WKNavigationDe
         )
         
         window.center()
-        window.title = "KickMyComputer Dashboard"
+        window.title = "SmackYourComputer Dashboard"
         window.titlebarAppearsTransparent = true
         window.titleVisibility = .hidden
         window.isMovableByWindowBackground = true
@@ -115,7 +115,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKUIDelegate, WKNavigationDe
         
         if let button = statusItem.button {
             if #available(macOS 11.0, *) {
-                button.image = NSImage(systemSymbolName: "desktopcomputer", accessibilityDescription: "KickMyComputer")
+                button.image = NSImage(systemSymbolName: "desktopcomputer", accessibilityDescription: "SmackYourComputer")
                 button.image?.isTemplate = true
             } else {
                 button.title = "💻"

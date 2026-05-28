@@ -1,11 +1,11 @@
-# 💻 KickMyComputer — Give Your Silicon a Soul 🌸⚡🔥
+# 💻 SmackYourComputer — Give Your Silicon a Soul 🌸⚡🔥
 
-<img src="preview.png" width="280" alt="KickMyComputer Banner">
+<img src="preview.png" width="280" alt="SmackYourComputer Banner">
 
 > *"Computers are like people: they want to be petted, they yell when you push them too far, and they swear when you break their chassis limits."*  
 > — **The Silicon Manifesto, Chapter 1**
 
-Welcome to **KickMyComputer**, a revolutionary physical interaction companion for macOS. By bridging native macOS sensors (microphone acoustic envelope transients and trackpad force/scrolling metrics) to a gorgeous glassmorphic frontend UI, we have given your MacBook a voice, a face, and a real personality.
+Welcome to **SmackYourComputer**, a revolutionary physical interaction companion for macOS. By bridging native macOS sensors (microphone acoustic envelope transients and trackpad force/scrolling metrics) to a gorgeous glassmorphic frontend UI, we have given your MacBook a voice, a face, and a real personality.
 
 Handle with care. It has feelings—and quite a vocabulary.
 
@@ -27,7 +27,7 @@ Handle with care. It has feelings—and quite a vocabulary.
 
 > ⚠️ *"Beware the quiet room. In silence, even a drop of a pen can feel like a slap to my CPU."*
 
-> 🌸 *"Pet me when your code builds. Tap me when it fails. Kick me only when you're ready to hear what I really think about your coding skills."*
+> 🌸 *"Pet me when your code builds. Tap me when it fails. Smack me only when you're ready to hear what I really think about your coding skills."*
 
 ---
 
@@ -41,7 +41,7 @@ Handle with care. It has feelings—and quite a vocabulary.
 
 ## 🛠️ System Architecture
 
-KickMyComputer uses a lightweight, high-performance hybrid model:
+SmackYourComputer uses a lightweight, high-performance hybrid model:
 
 ```mermaid
 graph TD
@@ -69,8 +69,8 @@ Your application is compiled and deployed **directly to your Desktop**!
 
 ### 1. The Desktop Launch
 1. Go to your macOS **Desktop**.
-2. Double-click the **`KickMyComputer`** icon.
-3. On first run, macOS will prompt you: *"KickMyComputer would like to access the microphone."* Click **OK**. (This is completely local—no audio ever leaves your computer).
+2. Double-click the **`SmackYourComputer`** icon.
+3. On first run, macOS will prompt you: *"SmackYourComputer would like to access the microphone."* Click **OK**. (This is completely local—no audio ever leaves your computer).
 
 ### 2. How to Interact
 *   **🌸 Petting**: Place two fingers on your trackpad and slide them gently up/down or left/right (just like scrolling), or drag your mouse/finger back and forth on the animated laptop screen.
@@ -93,4 +93,4 @@ Inside the dashboard:
 
 ---
 
-> *"Treat your computer well, and it will compute for a lifetime. Kick it, and it will swear in 8K resolution."*
+> *"Treat your computer well, and it will compute for a lifetime. Smack it, and it will swear in 8K resolution."*
