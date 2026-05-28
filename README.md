@@ -1,6 +1,6 @@
 # 💻 KickMyComputer — Give Your Silicon a Soul 🌸⚡🔥
 
-![KickMyComputer Banner](preview.png)
+<img src="preview.png" width="280" alt="KickMyComputer Banner">
 
 > *"Computers are like people: they want to be petted, they yell when you push them too far, and they swear when you break their chassis limits."*  
 > — **The Silicon Manifesto, Chapter 1**
